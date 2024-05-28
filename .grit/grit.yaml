@@ -2,6 +2,7 @@ version: 0.0.1
 patterns:
   - name: github.com/getgrit/stdlib#py_no_debugger
   - name: github.com/getgrit/stdlib#collection_builtin
+  - name: github.com/getgrit/stdlib#comp_to_generator
   - name: lint
     body: |
       engine marzano(0.1)
@@ -11,6 +12,7 @@ patterns:
         maybe contains R0205(),
         maybe contains R1734(),
         maybe contains R1735(),
+        maybe contains R1717(),
         maybe contains C0201(),
         maybe contains C0112(),
       }
@@ -22,6 +24,7 @@ patterns:
       sequential {
         maybe contains py_no_debugger(),
         maybe contains collection_builtin(),
+        maybe contains comp_to_generator(),
         maybe contains timezone(),
       }
   - name: all
