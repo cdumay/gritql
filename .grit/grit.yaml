@@ -1,0 +1,35 @@
+version: 0.0.1
+patterns:
+  - name: github.com/getgrit/stdlib#py_no_debugger
+  - name: github.com/getgrit/stdlib#collection_builtin
+  - name: lint
+    body: |
+      engine marzano(0.1)
+      language python
+
+      sequential {
+        maybe contains R0205(),
+        maybe contains R1734(),
+        maybe contains R1735(),
+        maybe contains C0201(),
+        maybe contains C0112(),
+      }
+  - name: best_practice
+    body: |
+      engine marzano(0.1)
+      language python
+
+      sequential {
+        maybe contains py_no_debugger(),
+        maybe contains collection_builtin(),
+        maybe contains timezone(),
+      }
+  - name: all
+    body: |
+      engine marzano(0.1)
+      language python
+      
+      sequential {
+        maybe contains best_practice(),
+        maybe contains lint(),
+      }
