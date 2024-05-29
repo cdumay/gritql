@@ -17,6 +17,7 @@ patterns:
         maybe contains C0201(),
         maybe contains C0112(),
         maybe contains C0116(),
+        maybe contains C0209(),
       }
   - name: best_practice
     body: |
