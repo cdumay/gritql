@@ -30,6 +30,7 @@ patterns:
         maybe contains comp_to_generator(),
         maybe contains timezone(),
         maybe contains fstring(),
+        maybe contains str_vs_anystr(),
       }
   - name: all
     body: |
